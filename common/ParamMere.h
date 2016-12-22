@@ -21,7 +21,6 @@ public:
    /*fonction purement virtuelle qui devra etre defini dans les enfants +=*/
    virtual void printInfo(void) const = 0;
    virtual bool testBounces(void) const = 0;
-
 protected:
    t_direction m_direction;
    /*address in configuration structure for out and in_out direction*/

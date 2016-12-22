@@ -20,7 +20,6 @@ public:
    ParamInt(t_direction direction,void* p_cfg, std::string descriptorName,int value,int min,int max);
 
    virtual ~ParamInt();
-
    ParamInt& operator+=(ParamInt const& param);
    ParamInt& operator+=(int param);
    ParamInt& operator+=(float param);
@@ -35,6 +34,7 @@ public:
 
    virtual void printInfo(void) const;
    virtual void setValue(int const val);
+   virtual int getValue(void) const;
    virtual bool testBounces(void) const;
 
 protected:

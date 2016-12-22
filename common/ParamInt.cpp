@@ -25,6 +25,11 @@ void ParamInt::setValue(int const val)
 {
    m_value = val;
 }
+int ParamInt::getValue(void) const
+{
+   return(m_value);
+}
+
 
 void ParamInt::printInfo(void) const{
    cout << m_value << " (" << m_descriptorName << ")" << endl;
