@@ -10,56 +10,94 @@
 #include "common.h"
 #include "ParamMere.h"
 #include "ParamFloat.h"
+#include "ParamInt.h"
 
 using namespace std;
 
 //ParamFloat(t_direction direction,void* p_cfg, std::string descriptorName,float value,float min,float max);
 ParamFloat::ParamFloat(t_direction direction, void* p_cfg,
-      string descriptorName, float value, float min, float max) :
-      ParamMere(direction, p_cfg, descriptorName), m_value(value), m_minValue(
+      string descriptorName, Module& module,float value, float min, float max) :
+      ParamMere(direction, p_cfg, descriptorName,module,1), m_value(value), m_minValue(
             min), m_maxValue(max)
 {
-   // TODO Auto-generated constructor stub
+   // m_p_value initialized in ParamMere constructor in case of direction OUT or IN OUT
+   if (direction == IN)
+      m_p_value = &m_value;
 }
+/*Constructor IN*/
+ParamFloat::ParamFloat(
+      string descriptorName,Module& module, float value, float min, float max) :
+      ParamMere(IN, 0, descriptorName,module,1), m_value(value), m_minValue(
+            min), m_maxValue(max)
+{
+   m_p_value = &m_value;
+}
+
 
 void ParamFloat::setValue(float const val)
 {
-   m_value = val;
+   *(float*)m_p_value = val;
 }
 float ParamFloat::getValue(void) const
 {
-   return(m_value);
+   return(*(float*)m_p_value);
+}
+void* ParamFloat::getAdressOfValue(void){
+   return (m_p_value);
 }
 void ParamFloat::printInfo(void) const{
-   cout << m_value << " (" << m_descriptorName << ")" << endl;
+   cout << *(float*)m_p_value << " (" << m_descriptorName << "\\" << directionString() << ")" << endl;
 }
 bool ParamFloat::testBounces(void) const{
-   return (m_value <= m_maxValue && m_value >= m_minValue);
+   return (*(float*)m_p_value <= m_maxValue && *(float*)m_p_value >= m_minValue);
 }
 
 
 /*SHORT OPERATOR*/
 /****************/
+/*Affectation   */
+/****************/
+ParamFloat& ParamFloat::operator=(ParamFloat const& param)
+{
+   *(float*)m_p_value = *(float*)param.m_p_value;
+   return (*this);
+}
+ParamFloat& ParamFloat::operator=(ParamInt const& param)
+{
+   *(float*)m_p_value = param.getValue();
+   return (*this);
+}
+ParamFloat& ParamFloat::operator=(float param)
+{
+   *(float*)m_p_value = param;
+   return (*this);
+}
+ParamFloat& ParamFloat::operator=(int param)
+{
+   *(float*)m_p_value = (float)param;
+   return (*this);
+}
+/****************/
 /*Addition      */
 /****************/
 ParamFloat& ParamFloat::operator+=(ParamFloat const& param)
 {
-   m_value += param.m_value;
+   *(float*)m_p_value += *(float*)param.m_p_value;
    return (*this);
 }
 ParamFloat& ParamFloat::operator+=(ParamInt const& param)
 {
-   m_value += param.getValue();
+   *(float*)m_p_value += param.getValue();
    return (*this);
 }
 ParamFloat& ParamFloat::operator+=(float param)
 {
-   m_value += param;
+   *(float*)m_p_value += param;
    return (*this);
 }
 ParamFloat& ParamFloat::operator+=(int param)
 {
-   m_value += (float)param;
+   *(float*)m_p_value += (float)param;
    return (*this);
 }
 /****************/
@@ -67,22 +105,22 @@ ParamFloat& ParamFloat::operator+=(int param)
 /****************/
 ParamFloat& ParamFloat::operator*=(ParamFloat const& param)
 {
-   m_value *= param.m_value;
+   *(float*)m_p_value *= *(float*)param.m_p_value;
    return (*this);
 }
 ParamFloat& ParamFloat::operator*=(ParamInt const& param)
 {
-   m_value *= param.getValue();
+   *(float*)m_p_value *= param.getValue();
    return (*this);
 }
 ParamFloat& ParamFloat::operator*=(float param)
 {
-   m_value *= param;
+   *(float*)m_p_value *= param;
    return (*this);
 }
 ParamFloat& ParamFloat::operator*=(int param)
 {
-   m_value *= (float)param;
+   *(float*)m_p_value *= (float)param;
    return (*this);
 }
 
@@ -91,22 +129,22 @@ ParamFloat& ParamFloat::operator*=(int param)
 /****************/
 ParamFloat& ParamFloat::operator/=(ParamFloat const& param)
 {
-   m_value /= param.m_value;
+   *(float*)m_p_value /= *(float*)param.m_p_value;
    return (*this);
 }
 ParamFloat& ParamFloat::operator/=(ParamInt const& param)
 {
-   m_value /= param.getValue();
+   *(float*)m_p_value /= param.getValue();
    return (*this);
 }
 ParamFloat& ParamFloat::operator/=(int param)
 {
-   m_value /= (float)param;
+   *(float*)m_p_value /= (float)param;
    return (*this);
 }
 ParamFloat& ParamFloat::operator/=(float param)
 {
-   m_value /= (int)param;
+   *(float*)m_p_value /= (int)param;
    return (*this);
 }
 

@@ -9,49 +9,43 @@
 #include <iostream>
 
 #include "Module.h"
+
+#include "fdbm.h"
+#include "onds_cfg.h"
+
 #include "ParamMere.h"
 #include "ParamFloat.h"
 #include "ParamInt.h"
+#include "Filter.h"
 
 using namespace std;
 
-typedef struct{
-   int val1;
-   int val2;
-   int val3;
-   float fVal1;
-   float fVal2;
-   float fVal3;
-}t_structParamInvOn;
-
-t_structParamInvOn paramInvOn;
-
+OND_S_CFG ond_s_cfg;
 
 int main() {
-   int nval1 = 10;
-   float nfval1 = 3.14;
 
 
 	cout << "Demonstration de calcCfg+" << endl;
 
 	/*creation d'un module*/
-	Module inv_on("inv_on_in","inv_on_out");
+	Module inv_on("inv_on_in","inv_on_out", &ond_s_cfg, (sizeof(OND_S_CFG)/sizeof(int)) );
 
 	/*Creation d'un paramètre*/
-	ParamInt val1(IN,&paramInvOn.val1,"val1",10,0,100);
-	ParamInt val2(IN,&paramInvOn.val2,"val2",23,0,100);
-	ParamInt val3(IN,&paramInvOn.val3,"val3",1,0,100);
-
-	ParamFloat fval1(IN_OUT,&paramInvOn.fVal1,"fVal1",3.89,-3.14,1000.0);
-	fval1.printInfo();
-
-	nfval1 /= nval1;
-	cout << nfval1 << " (nfval1)" << endl;
+	ParamInt val1("val1",inv_on,5,0,10);
+   ParamInt val2("val2",inv_on,10,0,10);
+	ParamInt CONF_FPGA(OUT,&(ond_s_cfg.Brass_cfg.CONF_FPGA),"CONF_FPGA",inv_on,0,0,10);
 	val1.printInfo();
-	fval1.printInfo();
-	fval1 = fval1 / val1;
-	fval1.printInfo();
-	fval1 = val1 + fval1;
-	fval1.printInfo();
+	val2.printInfo();
+	CONF_FPGA.printInfo();
+	CONF_FPGA = val1 + val2;
+	CONF_FPGA.printInfo();
+
+//	LowPassFilter filtre(&ond_s_cfg.beat_cfg.COEF_FLT_PB1_FCAT,"Filtre.nomMMAP",inv_on,gain,ti,te);
+//	filtre.printInfo();
+
+	inv_on.printInfo();
+
+	inv_on.generate();
+
 	return 0;
 }

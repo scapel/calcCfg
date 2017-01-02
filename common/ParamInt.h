@@ -9,26 +9,38 @@
 #define COMMON_PARAMINT_H_
 
 #include <string>
+#include <iostream>
 #include "common.h"
-#include <ParamMere.h>
+#include "ParamMere.h"
 
-
+class ParamFloat;
 
 class ParamInt: public ParamMere
 {
 public:
-   ParamInt(t_direction direction,void* p_cfg, std::string descriptorName,int value,int min,int max);
+   /*Constructor OUT or IN_OUT*/
+   ParamInt(t_direction direction,void* p_cfg, std::string descriptorName,Module& module,int value,int min,int max);
+   /*Constructor IN*/
+   ParamInt(std::string descriptorName,Module& module,int value,int min,int max);
 
-   virtual ~ParamInt();
+   ParamInt& operator=(ParamInt const& param);
+   ParamInt& operator=(ParamFloat const& param);
+   ParamInt& operator=(int param);
+   ParamInt& operator=(float param);
+
+
    ParamInt& operator+=(ParamInt const& param);
+   ParamInt& operator+=(ParamFloat const& param);
    ParamInt& operator+=(int param);
    ParamInt& operator+=(float param);
 
    ParamInt& operator*=(ParamInt const& param);
+   ParamInt& operator*=(ParamFloat const& param);
    ParamInt& operator*=(int param);
    ParamInt& operator*=(float param);
 
    ParamInt& operator/=(ParamInt const& param);
+   ParamInt& operator/=(ParamFloat const& param);
    ParamInt& operator/=(int param);
    ParamInt& operator/=(float param);
 
@@ -36,6 +48,8 @@ public:
    virtual void setValue(int const val);
    virtual int getValue(void) const;
    virtual bool testBounces(void) const;
+
+   virtual ~ParamInt();
 
 protected:
    /*Value*/

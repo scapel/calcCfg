@@ -7,56 +7,92 @@
 #include <string>
 #include <iostream>
 #include "common.h"
-#include <ParamMere.h>
-#include <ParamInt.h>
+#include "ParamMere.h"
+#include "ParamInt.h"
+#include "ParamFloat.h"
 
 using namespace std;
 
 ParamInt::ParamInt(t_direction direction, void* p_cfg,
-      string descriptorName, int value, int min, int max) :
-      ParamMere(direction, p_cfg, descriptorName), m_value(value), m_minValue(
+      string descriptorName,Module& module, int value, int min, int max) :
+      ParamMere(direction, p_cfg, descriptorName,module,1), m_value(value), m_minValue(
             min), m_maxValue(max)
 {
-   // TODO Auto-generated constructor stub
-
-// Accesseur to the value
+   // m_p_value initialized in ParamMere constructor in case of direction OUT or IN OUT
+   if (direction == IN)
+      m_p_value = &m_value;
 }
+
+/*A simplest constructor For IN Value*/
+ParamInt::ParamInt(string descriptorName,Module& module, int value, int min, int max) :
+      ParamMere(IN, 0, descriptorName,module,1), m_value(value), m_minValue(
+            min), m_maxValue(max)
+{
+   m_p_value = &m_value;
+}
+
+
 void ParamInt::setValue(int const val)
 {
-   m_value = val;
+   *(int*)m_p_value = val;
 }
 int ParamInt::getValue(void) const
 {
-   return(m_value);
+   return(*(int*)m_p_value);
 }
-
-
 void ParamInt::printInfo(void) const{
-   cout << m_value << " (" << m_descriptorName << ")" << endl;
+   cout << *(int*)m_p_value << " (" << m_descriptorName << "\\" << directionString() << ")" << endl;
 }
-
 bool ParamInt::testBounces(void) const{
-   return (m_value <= m_maxValue && m_value >= m_minValue);
+   return (*(int*)m_p_value <= m_maxValue && *(int*)m_p_value >= m_minValue);
 }
 
 
 /*SHORT OPERATOR*/
 /****************/
+/*Affectation   */
+/****************/
+ParamInt& ParamInt::operator=(ParamInt const& param)
+{
+   *(int*)m_p_value = *(int*)param.m_p_value;
+   return (*this);
+}
+ParamInt& ParamInt::operator=(ParamFloat const& param)
+{
+   *(int*)m_p_value = (int)param.getValue();
+   return (*this);
+}
+ParamInt& ParamInt::operator=(int param)
+{
+   *(int*)m_p_value = param;
+   return (*this);
+}
+ParamInt& ParamInt::operator=(float param)
+{
+   *(int*)m_p_value = (int)param;
+   return (*this);
+}
+/****************/
 /*Addition      */
 /****************/
 ParamInt& ParamInt::operator+=(ParamInt const& param)
 {
-   m_value += param.m_value;
+   *(int*)m_p_value += *(int*)param.m_p_value;
+   return (*this);
+}
+ParamInt& ParamInt::operator+=(ParamFloat const& param)
+{
+   *(int*)m_p_value += (int)param.getValue();
    return (*this);
 }
 ParamInt& ParamInt::operator+=(int param)
 {
-   m_value += param;
+   *(int*)m_p_value += param;
    return (*this);
 }
 ParamInt& ParamInt::operator+=(float param)
 {
-   m_value += (int)param;
+   *(int*)m_p_value += (int)param;
    return (*this);
 }
 /****************/
@@ -64,17 +100,21 @@ ParamInt& ParamInt::operator+=(float param)
 /****************/
 ParamInt& ParamInt::operator*=(ParamInt const& param)
 {
-   m_value *= param.m_value;
+   *(int*)m_p_value *= *(int*)param.m_p_value;
+   return (*this);
+}
+ParamInt& ParamInt::operator*=(ParamFloat const& param){
+   *(int*)m_p_value *= (int)param.getValue();
    return (*this);
 }
 ParamInt& ParamInt::operator*=(int param)
 {
-   m_value *= param;
+   *(int*)m_p_value *= param;
    return (*this);
 }
 ParamInt& ParamInt::operator*=(float param)
 {
-   m_value *= (int)param;
+   *(int*)m_p_value *= (int)param;
    return (*this);
 }
 
@@ -83,17 +123,22 @@ ParamInt& ParamInt::operator*=(float param)
 /****************/
 ParamInt& ParamInt::operator/=(ParamInt const& param)
 {
-   m_value /= param.m_value;
+   *(int*)m_p_value /= *(int*)param.m_p_value;
+   return (*this);
+}
+ParamInt& ParamInt::operator/=(ParamFloat const& param)
+{
+   *(int*)m_p_value /= (int)param.getValue();
    return (*this);
 }
 ParamInt& ParamInt::operator/=(int param)
 {
-   m_value /= param;
+   *(int*)m_p_value /= param;
    return (*this);
 }
 ParamInt& ParamInt::operator/=(float param)
 {
-   m_value /= (int)param;
+   *(int*)m_p_value /= (int)param;
    return (*this);
 }
 

@@ -12,12 +12,22 @@
 #include <iostream>
 #include "common.h"
 #include "ParamMere.h"
-#include "ParamInt.h"
+
+/*déclarations anticipées (forward declaration)*/
+class ParamInt;
 
 class ParamFloat: public ParamMere
 {
 public:
-   ParamFloat(t_direction direction,void* p_cfg, std::string descriptorName,float value,float min,float max);
+   /*Constructor OUT or IN_OUT*/
+   ParamFloat(t_direction direction,void* p_cfg, std::string descriptorName,Module& module,float value,float min,float max);
+   /*Constructor IN*/
+   ParamFloat(std::string descriptorName,Module& module,float value,float min,float max);
+
+   ParamFloat& operator=(ParamFloat const& param);
+   ParamFloat& operator=(ParamInt const& param);
+   ParamFloat& operator=(int param);
+   ParamFloat& operator=(float param);
 
    ParamFloat& operator+=(ParamFloat const& param);
    ParamFloat& operator+=(ParamInt const& param);
@@ -38,6 +48,7 @@ public:
    virtual void printInfo(void) const;
    virtual void setValue(float const val);
    virtual float getValue(void) const;
+   virtual void* getAdressOfValue(void);
    virtual bool testBounces(void) const;
 
    virtual ~ParamFloat();
