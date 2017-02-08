@@ -1,0 +1,1904 @@
+;---------------------------------------------------      
+; definition de la version de LCA cible      
+; identique a la constante 'revision_id' du LCA      
+; a verifier si soucis de configuration      
+; Organe         Version      
+; OND            0....127      
+; PMCF/HEA       128..199      
+; PMCF           200..255      
+; version conf $1F6D57D0     
+; version param $1FD8635D     
+;---------------------------------------------------      
+; definition de la version de LCA cible      
+; identique a la constante 'revision_id' du LCA      
+; a verifier si soucis de configuration      
+;---------------------------------------------------      
+(setq version_lca 16 )   
+(setq interface_adc.interface_adc.signe_test 0 )   
+(setq interface_adc.interface_adc.signe_vit1 0 )   
+(setq interface_adc.interface_adc.signe_vit2 0 )   
+(setq interface_adc.interface_adc.signe_vit3 0 )   
+(setq interface_adc.interface_adc.signe_vit4 0 )   
+(setq interface_adc.interface_adc.signe_vit5 0 )   
+(setq interface_adc.interface_adc.signe_ana0 0 )   
+(setq interface_adc.interface_adc.signe_ana1 0 )   
+(setq interface_adc.interface_adc.signe_ana2 0 )   
+(setq interface_adc.interface_adc.signe_ana3 0 )   
+(setq interface_adc.interface_adc.signe_ana4 0 )   
+(setq interface_adc.interface_adc.signe_ana5 0 )   
+(setq interface_adc.interface_adc.signe_ana6 0 )   
+(setq interface_adc.interface_adc.signe_ana7 0 )   
+(setq combinaisons.combinaisons.reconstitue 0 )   
+(setq acq_periodique.acq_periodique.it_decimation 1 )   
+(setq acq_periodique.acq_periodique.taux_decimation 50 )   
+(setq interface_se.pullup.pullup 4095 )   
+(setq interface_se.in0.config_input 0 )   
+(setq interface_se.in0.config_output 1 )   
+(setq interface_se.in1.config_input 0 )   
+(setq interface_se.in1.config_output 0 )   
+(setq interface_se.in2.config_input 0 )   
+(setq interface_se.in2.config_output 0 )   
+(setq interface_se.in3.config_input 0 )   
+(setq interface_se.in3.config_output 0 )   
+(setq interface_se.in4.config_input 0 )   
+(setq interface_se.in4.config_output 0 )   
+(setq interface_se.in5.config_input 0 )   
+(setq interface_se.in5.config_output 0 )   
+(setq interface_se.in6.config_input 0 )   
+(setq interface_se.in6.config_output 0 )   
+(setq interface_se.in7.config_input 0 )   
+(setq interface_se.in7.config_output 0 )   
+(setq interface_se.in8.config_input 0 )   
+(setq interface_se.in8.config_output 0 )   
+(setq interface_se.in9.config_input 0 )   
+(setq interface_se.in9.config_output 0 )   
+(setq interface_se.in10.config_input 0 )   
+(setq interface_se.in10.config_output 0 )   
+(setq interface_se.in11.config_input 0 )   
+(setq interface_se.in11.config_output 0 )   
+(setq interface_se.in12.config_input 0 )   
+(setq interface_se.in12.config_output 0 )   
+(setq interface_se.in13.config_input 0 )   
+(setq interface_se.in13.config_output 0 )   
+(setq interface_se.in14.config_input 0 )   
+(setq interface_se.in14.config_output 0 )   
+(setq interface_se.in15.config_input 0 )   
+(setq interface_se.in15.config_output 0 )   
+(setq interface_se.in16.config_input 0 )   
+(setq interface_se.in16.config_output 0 )   
+(setq interface_se.in17.config_input 0 )   
+(setq interface_se.in17.config_output 0 )   
+(setq interface_se.in18.config_input 0 )   
+(setq interface_se.in18.config_output 0 )   
+(setq interface_se.in19.config_input 0 )   
+(setq interface_se.in19.config_output 0 )   
+(setq interface_se.in20.config_input 0 )   
+(setq interface_se.in20.config_output 0 )   
+(setq interface_se.in21.config_input 0 )   
+(setq interface_se.in21.config_output 0 )   
+(setq interface_se.in22.config_input 1 )   
+(setq interface_se.in22.config_output 0 )   
+(setq interface_se.in23.config_input 1 )   
+(setq interface_se.in23.config_output 0 )   
+(setq hsi.retard_hso_1.tempo 1 )   
+(setq hsi.retard_hso_2.tempo 1 )   
+(setq hsi.mux_hso_se.mux_hso_1 0 )   
+(setq hsi.mux_hso_se.mux_hso_2 0 )   
+(setq hsi.it_sur_evt.it_voie_0 0 )   
+(setq hsi.it_sur_evt.it_voie_1 0 )   
+(setq hsi.it_sur_evt.it_voie_2 0 )   
+(setq hsi.fronts_hsi_0.front_montant 1 )   
+(setq hsi.fronts_hsi_0.front_descendant 0 )   
+(setq hsi.fronts_hsi_1.front_montant 1 )   
+(setq hsi.fronts_hsi_1.front_descendant 0 )   
+(setq hsi.fronts_hsi_2.front_montant 0 )   
+(setq hsi.fronts_hsi_2.front_descendant 1 )   
+(setq calib.calib.tmin_conduction 99 )   
+(setq calib.calib.tmort 99 )   
+(setq calib.calib.t_min_blocage 99 )   
+(setq calib.retour_ip.t_sample 49 )   
+(setq calib.retour_ip.signe_ret_ip 0 )   
+(setq calib.retour_ip.retour/defaut 0 )   
+(setq calib.retour_ip.confirm_def_pmcf 0 )   
+(setq confirmer_def.tolerance.valeur 10 )   
+(defun gain_inverse_iph (n)      
+  (/ (* n 5.0) (* 1023. 5.0 resistance_charge_capteur gain_lem)))      
+(defun gain_iph (i)      
+  (/ (* resistance_charge_capteur gain_lem 5.0 1023.0 i ) 5.0))      
+(setq  coeff_A 1.1646 )   
+(setq  coeff_B -3.921 )   
+(setq  coeff_C 3.7434 )   
+(setq  coeff_D -0.037 )   
+(setq  resistance_charge_capteur 4.87 )   
+(setq  gain_lem 1 )   
+(setq  Ipe_externe 592.38 )   
+(setq  tmort 100 )   
+(setq  Gain_tmort 0 )   
+(setq Icp (/ (gain_iph Ipe_externe)  592.38 ))   
+(defun compensation_front_montant(i)      
+  (cond ((<= i 0) 0.0)      
+   ((< i (* 1.4 Icp))     
+   (* Gain_tmort tmort     
+   (+ (* coeff_A (expt (/ i Icp) 4))     
+   (* coeff_B (expt (/ i Icp) 3))     
+   (* coeff_C (expt (/ i Icp) 2))     
+   (* coeff_D       (/ i Icp)   ))))     
+   (t (* Gain_tmort tmort))     
+  )      
+)      
+(defun compensation_front_descendant(i)      
+  (cond ((>= i 0) 0.0)      
+   ((< (* -1 i) (* 1.4 Icp))     
+   (* Gain_tmort tmort     
+   (+ (* coeff_A (expt (/ (* -1 i) Icp) 4))     
+   (* coeff_B (expt (/ (* -1 i) Icp) 3))     
+   (* coeff_C (expt (/ (* -1 i) Icp) 2))     
+   (* coeff_D       (/ (* -1 i) Icp)   ))))     
+   (t (* Gain_tmort tmort))     
+  )      
+)      
+(defun to_unsigned(x)  ( logand (round x) 511))       
+(defun unsigned_liste(x)       
+   (cond     
+   ((null x) nil)     
+   (t (cons (list (to_unsigned(caar x)) (to_unsigned (cadar x))) (unsigned_liste (cdr x))))     
+  )      
+)      
+      
+(defun generer_table_compensation_fmt()      
+  (prog( mini maxi cour valeur res)      
+  (setq mini -512)     
+  (setq maxi 511)     
+  (setq cour mini)     
+  (setq res nil)     
+  loop     
+ (cond ((> cour maxi) (return res)))     
+ (setq res (cons (list (/ cour 2.0)     
+  (+ (compensation_front_montant cour) 1)) res))     
+ (setq cour (+ 2 cour))     
+ (go loop)     
+ )      
+)      
+(defun generer_table_compensation_fdc()      
+  (prog( mini maxi cour valeur res)      
+  (setq mini -512)     
+  (setq maxi 511)     
+  (setq cour mini)     
+  (setq res nil)     
+  loop     
+ (cond ((> cour maxi) (return res)))     
+ (setq res (cons (list (/ cour 2.0)     
+  (+ (compensation_front_descendant cour) 1) ) res))     
+ (setq cour (+ 2 cour))     
+ (go loop)     
+ )      
+)      
+(setq liste_fd (unsigned_liste(generer_table_compensation_fmt)))      
+(setq liste_fm (unsigned_liste(generer_table_compensation_fdc)))      
+(config 'symetrisation      
+  '(     
+   (unit ctm_fm     
+ (valeur liste_fm)     
+   )     
+   (unit ctm_fd     
+  (valeur liste_fd)     
+   )     
+  )      
+)      
+(setq calib_hrh.calib.tmin_conduction 99 )   
+(setq calib_hrh.calib.t_min_blocage 99 )   
+(setq calib_hrh.retour_ip.t_sample 49 )   
+(setq calib_hrh.retour_ip.signe_ret_ip 0 )   
+(setq calib_hrh.retour_ip.signe_ret_def 0 )   
+(setq calib_hrh.retour_ip.retour/defaut 1 )   
+(setq reserve.polarisation_rip.EO_RESECAP2 0 )   
+(setq reserve.polarisation_rip.EO_RESECAP1 0 )   
+(setq reserve.polarisation_rip.EO_RESECAP0 0 )   
+(setq reserve.sens_def_rip.SENS_DEF_ALIM_HRH 0 )   
+(setq reserve.sens_def_rip.SENS_DEF_ALIM_ALL 0 )   
+(setq reserve.sens_def_rip.SENS_DEF_BRAS_T 0 )   
+(setq reserve.sens_def_rip.SENS_DEF_BRAS_S 0 )   
+(setq reserve.sens_def_rip.SENS_DEF_BRAS_R 0 )   
+(setq mesure5vit.vitesse1.offset 797 )   
+(setq mesure5vit.vitesse1.seuil_bas -10 )   
+(setq mesure5vit.vitesse1.seuil_haut 10 )   
+(setq mesure5vit.vitesse1.flag_passif 1 )   
+(setq mesure5vit.vitesse1.recopie 0 )   
+(setq mesure5vit.vitesse1.front 0 )   
+(setq mesure5vit.vitesse2.offset 797 )   
+(setq mesure5vit.vitesse2.seuil_bas -10 )   
+(setq mesure5vit.vitesse2.seuil_haut 10 )   
+(setq mesure5vit.vitesse2.flag_passif 1 )   
+(setq mesure5vit.vitesse2.recopie 0 )   
+(setq mesure5vit.vitesse2.front 0 )   
+(setq mesure5vit.vitesse3.offset 797 )   
+(setq mesure5vit.vitesse3.seuil_bas -10 )   
+(setq mesure5vit.vitesse3.seuil_haut 10 )   
+(setq mesure5vit.vitesse3.flag_passif 1 )   
+(setq mesure5vit.vitesse3.recopie 0 )   
+(setq mesure5vit.vitesse3.front 0 )   
+(setq mesure5vit.vitesse4.offset 797 )   
+(setq mesure5vit.vitesse4.seuil_bas -10 )   
+(setq mesure5vit.vitesse4.seuil_haut 10 )   
+(setq mesure5vit.vitesse4.flag_passif 1 )   
+(setq mesure5vit.vitesse4.recopie 0 )   
+(setq mesure5vit.vitesse4.front 0 )   
+(setq mesure5vit.vitesse5.offset 797 )   
+(setq mesure5vit.vitesse5.seuil_bas -10 )   
+(setq mesure5vit.vitesse5.seuil_haut 10 )   
+(setq mesure5vit.vitesse5.flag_passif 1 )   
+(setq mesure5vit.vitesse5.recopie 0 )   
+(setq mesure5vit.vitesse5.front 0 )   
+(config 'seuil_comparateur      
+  '(      
+     (unit seuils      
+ (voie0  (seuil 1.07 1 (/ 0.467 592.38 ) 296.19 592.38 ))
+ (voie1  (seuil 1.07 1 (/ 0.467 592.38 ) 296.19 592.38 ))
+ (voie2  (seuil 1.07 1 (/ 0.467 592.38 ) 492.38 592.38 ))
+ (voie3  (seuil 1.07 1 (/ 0.467 691.12 ) 345.56 691.12 ))
+ (voie4  (seuil 1.07 1 (/ 0.467 691.12 ) 345.56 691.12 ))
+ (voie5  (seuil 1.07 1 (/ 0.467 691.12 ) 591.12 691.12 ))
+ (voie6  (seuil 1.07 1 (/ 0.467 592.38 ) 296.19 592.38 ))
+ (voie7  (seuil 1.07 1 (/ 0.467 592.38 ) 296.19 592.38 ))
+ (voie8  (seuil 1.07 1 (/ 0.467 592.38 ) 591.12 691.12 ))
+ (voie9  (seuil 1.07 1 (/ 0.467 723.21 ) 361.605 723.21 ))
+ (voie10 (seuil 1.07 1 (/ 0.467 723.21 ) 361.605 723.21 ))
+ (voie11 (seuil 1.07 0 (/ 0.467 665.54 ) 100 200 ))
+ (voie12 (seuil 1.07 0 (/ 0.467 665.54 ) 332.77 665.54 ))
+ (voie13 (seuil 1.07 0 (/ 0.467 665.54 ) 332.77 665.54 ))
+ (voie14 (seuil 1.07 0 (/ 0.467 665.54 ) 332.77 665.54 ))
+ (voie15 (seuil 1.07 0 (/ 0.467 665.54 ) 565.54 665.54 ))
+ (voie16 (seuil 1.07 0 (/ 0.467 1 ) 0.5 1 ))
+))      
+)      
+(setq tempo_comparateur.seuils.voie0 0 )   
+(setq tempo_comparateur.seuils.voie1 0 )   
+(setq tempo_comparateur.seuils.voie2 0 )   
+(setq tempo_comparateur.seuils.voie3 0 )   
+(setq tempo_comparateur.seuils.voie4 0 )   
+(setq tempo_comparateur.seuils.voie5 0 )   
+(setq tempo_comparateur.seuils.voie6 0 )   
+(setq tempo_comparateur.seuils.voie7 0 )   
+(setq tempo_comparateur.seuils.voie8 0 )   
+(setq tempo_comparateur.seuils.voie9 0 )   
+(setq tempo_comparateur.seuils.voie10 0 )   
+(setq tempo_comparateur.seuils.voie11 0 )   
+(setq tempo_comparateur.seuils.voie12 0 )   
+(setq tempo_comparateur.seuils.voie13 0 )   
+(setq tempo_comparateur.seuils.voie14 0 )   
+(setq tempo_comparateur.seuils.voie15 0 )   
+(setq tempo_comparateur.seuils.voie16 0 )   
+(setq boost.config.duree_pulse 0 )   
+(setq pulse_cc.config.duree_pulse 0 )   
+(setq pulse_cc.config.cc_enable 0 )   
+(setq pulse_dj.config.duree_pulse 0 )   
+(setq pulse_dj.config.cke_duree_pulse 0 )   
+(setq validation_traitement_immediat_non_amorcage_phase_R 1 )   
+(setq butee_min_traitement_immediat_non_amorcage_phase_R  '( 0 us )) 
+(setq evt_soft_traitement_immediat_non_amorcage_phase_R 1 )   
+(setq it_soft_traitement_immediat_non_amorcage_phase_R 0 )   
+(setq actions_traitement_immediat_non_amorcage_phase_R  '(    
+      
+      
+      
+      
+      
+  ECRETEUR_MEMO    
+      
+      
+      
+      
+  INHIB_PH_R_MEMO    
+  INHIB_PH_S_MEMO    
+  INHIB_PH_T_MEMO    
+      
+   ))   
+(setq validation_traitement_differe_non_amorcage_phase_R 0 )   
+(setq sel_tempo/compte_traitement_differe_non_amorcage_phase_R 0 )   
+(setq duree_traitement_differe_non_amorcage_phase_R  '( 1 8us )) 
+(setq val_compte_traitement_differe_non_amorcage_phase_R 1 )   
+(setq evt_soft_traitement_differe_non_amorcage_phase_R 0 )   
+(setq it_soft_traitement_differe_non_amorcage_phase_R 0 )   
+(setq actions_traitement_differe_non_amorcage_phase_R  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_non_amorcage_phase_S 1 )   
+(setq butee_min_traitement_immediat_non_amorcage_phase_S  '( 0 us )) 
+(setq evt_soft_traitement_immediat_non_amorcage_phase_S 1 )   
+(setq it_soft_traitement_immediat_non_amorcage_phase_S 0 )   
+(setq actions_traitement_immediat_non_amorcage_phase_S  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_non_amorcage_phase_S 0 )   
+(setq sel_tempo/compte_traitement_differe_non_amorcage_phase_S 0 )   
+(setq duree_traitement_differe_non_amorcage_phase_S  '( 1 8us )) 
+(setq val_compte_traitement_differe_non_amorcage_phase_S 1 )   
+(setq evt_soft_traitement_differe_non_amorcage_phase_S 0 )   
+(setq it_soft_traitement_differe_non_amorcage_phase_S 0 )   
+(setq actions_traitement_differe_non_amorcage_phase_S  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_non_amorcage_phase_T 1 )   
+(setq butee_min_traitement_immediat_non_amorcage_phase_T  '( 0 us )) 
+(setq evt_soft_traitement_immediat_non_amorcage_phase_T 1 )   
+(setq it_soft_traitement_immediat_non_amorcage_phase_T 0 )   
+(setq actions_traitement_immediat_non_amorcage_phase_T  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_non_amorcage_phase_T 0 )   
+(setq sel_tempo/compte_traitement_differe_non_amorcage_phase_T 0 )   
+(setq duree_traitement_differe_non_amorcage_phase_T  '( 1 8us )) 
+(setq val_compte_traitement_differe_non_amorcage_phase_T 1 )   
+(setq evt_soft_traitement_differe_non_amorcage_phase_T 0 )   
+(setq it_soft_traitement_differe_non_amorcage_phase_T 0 )   
+(setq actions_traitement_differe_non_amorcage_phase_T  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_brosse_phase_R 0 )   
+(setq butee_min_traitement_immediat_brosse_phase_R  '( 0 us )) 
+(setq evt_soft_traitement_immediat_brosse_phase_R 0 )   
+(setq it_soft_traitement_immediat_brosse_phase_R 0 )   
+(setq actions_traitement_immediat_brosse_phase_R  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_brosse_phase_R 0 )   
+(setq sel_tempo/compte_traitement_differe_brosse_phase_R 0 )   
+(setq duree_traitement_differe_brosse_phase_R  '( 0 8us )) 
+(setq val_compte_traitement_differe_brosse_phase_R 1 )   
+(setq evt_soft_traitement_differe_brosse_phase_R 0 )   
+(setq it_soft_traitement_differe_brosse_phase_R 0 )   
+(setq actions_traitement_differe_brosse_phase_R  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_brosse_phase_S 0 )   
+(setq butee_min_traitement_immediat_brosse_phase_S  '( 0 us )) 
+(setq evt_soft_traitement_immediat_brosse_phase_S 0 )   
+(setq it_soft_traitement_immediat_brosse_phase_S 0 )   
+(setq actions_traitement_immediat_brosse_phase_S  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_brosse_phase_S 0 )   
+(setq sel_tempo/compte_traitement_differe_brosse_phase_S 0 )   
+(setq duree_traitement_differe_brosse_phase_S  '( 0 8us )) 
+(setq val_compte_traitement_differe_brosse_phase_S 1 )   
+(setq evt_soft_traitement_differe_brosse_phase_S 0 )   
+(setq it_soft_traitement_differe_brosse_phase_S 0 )   
+(setq actions_traitement_differe_brosse_phase_S  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_brosse_phase_T 0 )   
+(setq butee_min_traitement_immediat_brosse_phase_T  '( 0 us )) 
+(setq evt_soft_traitement_immediat_brosse_phase_T 0 )   
+(setq it_soft_traitement_immediat_brosse_phase_T 0 )   
+(setq actions_traitement_immediat_brosse_phase_T  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_brosse_phase_T 0 )   
+(setq sel_tempo/compte_traitement_differe_brosse_phase_T 0 )   
+(setq duree_traitement_differe_brosse_phase_T  '( 0 8us )) 
+(setq val_compte_traitement_differe_brosse_phase_T 1 )   
+(setq evt_soft_traitement_differe_brosse_phase_T 0 )   
+(setq it_soft_traitement_differe_brosse_phase_T 0 )   
+(setq actions_traitement_differe_brosse_phase_T  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_DJ_phase_R 0 )   
+(setq butee_min_traitement_immediat_DJ_phase_R  '( 0 us )) 
+(setq evt_soft_traitement_immediat_DJ_phase_R 0 )   
+(setq it_soft_traitement_immediat_DJ_phase_R 0 )   
+(setq actions_traitement_immediat_DJ_phase_R  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_DJ_phase_R 0 )   
+(setq sel_tempo/compte_traitement_differe_DJ_phase_R 0 )   
+(setq duree_traitement_differe_DJ_phase_R  '( 0 8us )) 
+(setq val_compte_traitement_differe_DJ_phase_R 1 )   
+(setq evt_soft_traitement_differe_DJ_phase_R 0 )   
+(setq it_soft_traitement_differe_DJ_phase_R 0 )   
+(setq actions_traitement_differe_DJ_phase_R  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_DJ_phase_S 0 )   
+(setq butee_min_traitement_immediat_DJ_phase_S  '( 0 us )) 
+(setq evt_soft_traitement_immediat_DJ_phase_S 0 )   
+(setq it_soft_traitement_immediat_DJ_phase_S 0 )   
+(setq actions_traitement_immediat_DJ_phase_S  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_DJ_phase_S 0 )   
+(setq sel_tempo/compte_traitement_differe_DJ_phase_S 0 )   
+(setq duree_traitement_differe_DJ_phase_S  '( 0 8us )) 
+(setq val_compte_traitement_differe_DJ_phase_S 1 )   
+(setq evt_soft_traitement_differe_DJ_phase_S 0 )   
+(setq it_soft_traitement_differe_DJ_phase_S 0 )   
+(setq actions_traitement_differe_DJ_phase_S  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_DJ_phase_T 0 )   
+(setq butee_min_traitement_immediat_DJ_phase_T  '( 0 us )) 
+(setq evt_soft_traitement_immediat_DJ_phase_T 0 )   
+(setq it_soft_traitement_immediat_DJ_phase_T 0 )   
+(setq actions_traitement_immediat_DJ_phase_T  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_DJ_phase_T 0 )   
+(setq sel_tempo/compte_traitement_differe_DJ_phase_T 0 )   
+(setq duree_traitement_differe_DJ_phase_T  '( 0 8us )) 
+(setq val_compte_traitement_differe_DJ_phase_T 1 )   
+(setq evt_soft_traitement_differe_DJ_phase_T 0 )   
+(setq it_soft_traitement_differe_DJ_phase_T 0 )   
+(setq actions_traitement_differe_DJ_phase_T  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_IL 0 )   
+(setq butee_min_traitement_immediat_IL  '( 0 us )) 
+(setq evt_soft_traitement_immediat_IL 0 )   
+(setq it_soft_traitement_immediat_IL 0 )   
+(setq actions_traitement_immediat_IL  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_IL 0 )   
+(setq sel_tempo/compte_traitement_differe_IL 0 )   
+(setq duree_traitement_differe_IL  '( 0 8us )) 
+(setq val_compte_traitement_differe_IL 1 )   
+(setq evt_soft_traitement_differe_IL 0 )   
+(setq it_soft_traitement_differe_IL 0 )   
+(setq actions_traitement_differe_IL  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_UF_seuil_bas 0 )   
+(setq butee_min_traitement_immediat_UF_seuil_bas  '( 0 us )) 
+(setq evt_soft_traitement_immediat_UF_seuil_bas 0 )   
+(setq it_soft_traitement_immediat_UF_seuil_bas 0 )   
+(setq actions_traitement_immediat_UF_seuil_bas  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_UF_seuil_bas 0 )   
+(setq sel_tempo/compte_traitement_differe_UF_seuil_bas 0 )   
+(setq duree_traitement_differe_UF_seuil_bas  '( 0 8us )) 
+(setq val_compte_traitement_differe_UF_seuil_bas 1 )   
+(setq evt_soft_traitement_differe_UF_seuil_bas 0 )   
+(setq it_soft_traitement_differe_UF_seuil_bas 0 )   
+(setq actions_traitement_differe_UF_seuil_bas  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_UF_seuil_ecreteur 0 )   
+(setq butee_min_traitement_immediat_UF_seuil_ecreteur  '( 0 us )) 
+(setq evt_soft_traitement_immediat_UF_seuil_ecreteur 0 )   
+(setq it_soft_traitement_immediat_UF_seuil_ecreteur 0 )   
+(setq actions_traitement_immediat_UF_seuil_ecreteur  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_UF_seuil_ecreteur 0 )   
+(setq sel_tempo/compte_traitement_differe_UF_seuil_ecreteur 0 )   
+(setq duree_traitement_differe_UF_seuil_ecreteur  '( 0 8us )) 
+(setq val_compte_traitement_differe_UF_seuil_ecreteur 1 )   
+(setq evt_soft_traitement_differe_UF_seuil_ecreteur 0 )   
+(setq it_soft_traitement_differe_UF_seuil_ecreteur 0 )   
+(setq actions_traitement_differe_UF_seuil_ecreteur  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_UF_seuil_inhib 0 )   
+(setq butee_min_traitement_immediat_UF_seuil_inhib  '( 0 us )) 
+(setq evt_soft_traitement_immediat_UF_seuil_inhib 0 )   
+(setq it_soft_traitement_immediat_UF_seuil_inhib 0 )   
+(setq actions_traitement_immediat_UF_seuil_inhib  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_UF_seuil_inhib 0 )   
+(setq sel_tempo/compte_traitement_differe_UF_seuil_inhib 0 )   
+(setq duree_traitement_differe_UF_seuil_inhib  '( 0 8us )) 
+(setq val_compte_traitement_differe_UF_seuil_inhib 1 )   
+(setq evt_soft_traitement_differe_UF_seuil_inhib 0 )   
+(setq it_soft_traitement_differe_UF_seuil_inhib 0 )   
+(setq actions_traitement_differe_UF_seuil_inhib  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_UF_seuil_DJ 0 )   
+(setq butee_min_traitement_immediat_UF_seuil_DJ  '( 0 us )) 
+(setq evt_soft_traitement_immediat_UF_seuil_DJ 0 )   
+(setq it_soft_traitement_immediat_UF_seuil_DJ 0 )   
+(setq actions_traitement_immediat_UF_seuil_DJ  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_UF_seuil_DJ 0 )   
+(setq sel_tempo/compte_traitement_differe_UF_seuil_DJ 0 )   
+(setq duree_traitement_differe_UF_seuil_DJ  '( 0 8us )) 
+(setq val_compte_traitement_differe_UF_seuil_DJ 1 )   
+(setq evt_soft_traitement_differe_UF_seuil_DJ 0 )   
+(setq it_soft_traitement_differe_UF_seuil_DJ 0 )   
+(setq actions_traitement_differe_UF_seuil_DJ  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_UL_reserve 1 )   
+(setq butee_min_traitement_immediat_UL_reserve  '( 0 us )) 
+(setq evt_soft_traitement_immediat_UL_reserve 1 )   
+(setq it_soft_traitement_immediat_UL_reserve 0 )   
+(setq actions_traitement_immediat_UL_reserve  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_UL_reserve 0 )   
+(setq sel_tempo/compte_traitement_differe_UL_reserve 0 )   
+(setq duree_traitement_differe_UL_reserve  '( 1 8us )) 
+(setq val_compte_traitement_differe_UL_reserve 1 )   
+(setq evt_soft_traitement_differe_UL_reserve 0 )   
+(setq it_soft_traitement_differe_UL_reserve 0 )   
+(setq actions_traitement_differe_UL_reserve  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_discordance_ph_RH 0 )   
+(setq butee_min_traitement_immediat_discordance_ph_RH  '( 0 us )) 
+(setq evt_soft_traitement_immediat_discordance_ph_RH 0 )   
+(setq it_soft_traitement_immediat_discordance_ph_RH 0 )   
+(setq actions_traitement_immediat_discordance_ph_RH  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_discordance_ph_RH 0 )   
+(setq sel_tempo/compte_traitement_differe_discordance_ph_RH 0 )   
+(setq duree_traitement_differe_discordance_ph_RH  '( 0 8us )) 
+(setq val_compte_traitement_differe_discordance_ph_RH 1 )   
+(setq evt_soft_traitement_differe_discordance_ph_RH 0 )   
+(setq it_soft_traitement_differe_discordance_ph_RH 0 )   
+(setq actions_traitement_differe_discordance_ph_RH  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_discordance_ph_RB 0 )   
+(setq butee_min_traitement_immediat_discordance_ph_RB  '( 0 us )) 
+(setq evt_soft_traitement_immediat_discordance_ph_RB 0 )   
+(setq it_soft_traitement_immediat_discordance_ph_RB 0 )   
+(setq actions_traitement_immediat_discordance_ph_RB  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_discordance_ph_RB 0 )   
+(setq sel_tempo/compte_traitement_differe_discordance_ph_RB 0 )   
+(setq duree_traitement_differe_discordance_ph_RB  '( 0 8us )) 
+(setq val_compte_traitement_differe_discordance_ph_RB 1 )   
+(setq evt_soft_traitement_differe_discordance_ph_RB 0 )   
+(setq it_soft_traitement_differe_discordance_ph_RB 0 )   
+(setq actions_traitement_differe_discordance_ph_RB  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_discordance_ph_SH 0 )   
+(setq butee_min_traitement_immediat_discordance_ph_SH  '( 0 us )) 
+(setq evt_soft_traitement_immediat_discordance_ph_SH 0 )   
+(setq it_soft_traitement_immediat_discordance_ph_SH 0 )   
+(setq actions_traitement_immediat_discordance_ph_SH  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_discordance_ph_SH 0 )   
+(setq sel_tempo/compte_traitement_differe_discordance_ph_SH 0 )   
+(setq duree_traitement_differe_discordance_ph_SH  '( 0 8us )) 
+(setq val_compte_traitement_differe_discordance_ph_SH 1 )   
+(setq evt_soft_traitement_differe_discordance_ph_SH 0 )   
+(setq it_soft_traitement_differe_discordance_ph_SH 0 )   
+(setq actions_traitement_differe_discordance_ph_SH  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_discordance_ph_SB 0 )   
+(setq butee_min_traitement_immediat_discordance_ph_SB  '( 0 us )) 
+(setq evt_soft_traitement_immediat_discordance_ph_SB 0 )   
+(setq it_soft_traitement_immediat_discordance_ph_SB 0 )   
+(setq actions_traitement_immediat_discordance_ph_SB  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_discordance_ph_SB 0 )   
+(setq sel_tempo/compte_traitement_differe_discordance_ph_SB 0 )   
+(setq duree_traitement_differe_discordance_ph_SB  '( 0 8us )) 
+(setq val_compte_traitement_differe_discordance_ph_SB 1 )   
+(setq evt_soft_traitement_differe_discordance_ph_SB 0 )   
+(setq it_soft_traitement_differe_discordance_ph_SB 0 )   
+(setq actions_traitement_differe_discordance_ph_SB  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_discordance_ph_TH 0 )   
+(setq butee_min_traitement_immediat_discordance_ph_TH  '( 0 us )) 
+(setq evt_soft_traitement_immediat_discordance_ph_TH 0 )   
+(setq it_soft_traitement_immediat_discordance_ph_TH 0 )   
+(setq actions_traitement_immediat_discordance_ph_TH  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_discordance_ph_TH 0 )   
+(setq sel_tempo/compte_traitement_differe_discordance_ph_TH 0 )   
+(setq duree_traitement_differe_discordance_ph_TH  '( 0 8us )) 
+(setq val_compte_traitement_differe_discordance_ph_TH 1 )   
+(setq evt_soft_traitement_differe_discordance_ph_TH 0 )   
+(setq it_soft_traitement_differe_discordance_ph_TH 0 )   
+(setq actions_traitement_differe_discordance_ph_TH  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_discordance_ph_TB 0 )   
+(setq butee_min_traitement_immediat_discordance_ph_TB  '( 0 us )) 
+(setq evt_soft_traitement_immediat_discordance_ph_TB 0 )   
+(setq it_soft_traitement_immediat_discordance_ph_TB 0 )   
+(setq actions_traitement_immediat_discordance_ph_TB  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_discordance_ph_TB 0 )   
+(setq sel_tempo/compte_traitement_differe_discordance_ph_TB 0 )   
+(setq duree_traitement_differe_discordance_ph_TB  '( 0 8us )) 
+(setq val_compte_traitement_differe_discordance_ph_TB 1 )   
+(setq evt_soft_traitement_differe_discordance_ph_TB 0 )   
+(setq it_soft_traitement_differe_discordance_ph_TB 0 )   
+(setq actions_traitement_differe_discordance_ph_TB  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_discordance_HRH 0 )   
+(setq butee_min_traitement_immediat_discordance_HRH  '( 0 us )) 
+(setq evt_soft_traitement_immediat_discordance_HRH 0 )   
+(setq it_soft_traitement_immediat_discordance_HRH 0 )   
+(setq actions_traitement_immediat_discordance_HRH  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_discordance_HRH 0 )   
+(setq sel_tempo/compte_traitement_differe_discordance_HRH 0 )   
+(setq duree_traitement_differe_discordance_HRH  '( 0 8us )) 
+(setq val_compte_traitement_differe_discordance_HRH 1 )   
+(setq evt_soft_traitement_differe_discordance_HRH 0 )   
+(setq it_soft_traitement_differe_discordance_HRH 0 )   
+(setq actions_traitement_differe_discordance_HRH  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_defaut_phase_R 0 )   
+(setq butee_min_traitement_immediat_defaut_phase_R  '( 0 us )) 
+(setq evt_soft_traitement_immediat_defaut_phase_R 0 )   
+(setq it_soft_traitement_immediat_defaut_phase_R 0 )   
+(setq actions_traitement_immediat_defaut_phase_R  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_defaut_phase_R 0 )   
+(setq sel_tempo/compte_traitement_differe_defaut_phase_R 0 )   
+(setq duree_traitement_differe_defaut_phase_R  '( 0 8us )) 
+(setq val_compte_traitement_differe_defaut_phase_R 1 )   
+(setq evt_soft_traitement_differe_defaut_phase_R 0 )   
+(setq it_soft_traitement_differe_defaut_phase_R 0 )   
+(setq actions_traitement_differe_defaut_phase_R  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_defaut_phase_S 0 )   
+(setq butee_min_traitement_immediat_defaut_phase_S  '( 0 us )) 
+(setq evt_soft_traitement_immediat_defaut_phase_S 0 )   
+(setq it_soft_traitement_immediat_defaut_phase_S 0 )   
+(setq actions_traitement_immediat_defaut_phase_S  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_defaut_phase_S 0 )   
+(setq sel_tempo/compte_traitement_differe_defaut_phase_S 0 )   
+(setq duree_traitement_differe_defaut_phase_S  '( 0 8us )) 
+(setq val_compte_traitement_differe_defaut_phase_S 1 )   
+(setq evt_soft_traitement_differe_defaut_phase_S 0 )   
+(setq it_soft_traitement_differe_defaut_phase_S 0 )   
+(setq actions_traitement_differe_defaut_phase_S  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_defaut_phase_T 0 )   
+(setq butee_min_traitement_immediat_defaut_phase_T  '( 0 us )) 
+(setq evt_soft_traitement_immediat_defaut_phase_T 0 )   
+(setq it_soft_traitement_immediat_defaut_phase_T 0 )   
+(setq actions_traitement_immediat_defaut_phase_T  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_defaut_phase_T 0 )   
+(setq sel_tempo/compte_traitement_differe_defaut_phase_T 0 )   
+(setq duree_traitement_differe_defaut_phase_T  '( 0 8us )) 
+(setq val_compte_traitement_differe_defaut_phase_T 1 )   
+(setq evt_soft_traitement_differe_defaut_phase_T 0 )   
+(setq it_soft_traitement_differe_defaut_phase_T 0 )   
+(setq actions_traitement_differe_defaut_phase_T  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_defaut_alim_allumeur 0 )   
+(setq butee_min_traitement_immediat_defaut_alim_allumeur  '( 0 us )) 
+(setq evt_soft_traitement_immediat_defaut_alim_allumeur 0 )   
+(setq it_soft_traitement_immediat_defaut_alim_allumeur 0 )   
+(setq actions_traitement_immediat_defaut_alim_allumeur  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_defaut_alim_allumeur 0 )   
+(setq sel_tempo/compte_traitement_differe_defaut_alim_allumeur 0 )   
+(setq duree_traitement_differe_defaut_alim_allumeur  '( 0 8us )) 
+(setq val_compte_traitement_differe_defaut_alim_allumeur 1 )   
+(setq evt_soft_traitement_differe_defaut_alim_allumeur 0 )   
+(setq it_soft_traitement_differe_defaut_alim_allumeur 0 )   
+(setq actions_traitement_differe_defaut_alim_allumeur  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_defaut_alim_hrh 0 )   
+(setq butee_min_traitement_immediat_defaut_alim_hrh  '( 0 us )) 
+(setq evt_soft_traitement_immediat_defaut_alim_hrh 0 )   
+(setq it_soft_traitement_immediat_defaut_alim_hrh 0 )   
+(setq actions_traitement_immediat_defaut_alim_hrh  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_defaut_alim_hrh 0 )   
+(setq sel_tempo/compte_traitement_differe_defaut_alim_hrh 0 )   
+(setq duree_traitement_differe_defaut_alim_hrh  '( 0 8us )) 
+(setq val_compte_traitement_differe_defaut_alim_hrh 1 )   
+(setq evt_soft_traitement_differe_defaut_alim_hrh 0 )   
+(setq it_soft_traitement_differe_defaut_alim_hrh 0 )   
+(setq actions_traitement_differe_defaut_alim_hrh  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_ouv_dj_SE 0 )   
+(setq butee_min_traitement_immediat_ouv_dj_SE  '( 0 us )) 
+(setq evt_soft_traitement_immediat_ouv_dj_SE 0 )   
+(setq it_soft_traitement_immediat_ouv_dj_SE 0 )   
+(setq actions_traitement_immediat_ouv_dj_SE  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_ouv_dj_SE 0 )   
+(setq sel_tempo/compte_traitement_differe_ouv_dj_SE 0 )   
+(setq duree_traitement_differe_ouv_dj_SE  '( 500 8us )) 
+(setq val_compte_traitement_differe_ouv_dj_SE 1 )   
+(setq evt_soft_traitement_differe_ouv_dj_SE 0 )   
+(setq it_soft_traitement_differe_ouv_dj_SE 0 )   
+(setq actions_traitement_differe_ouv_dj_SE  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_inhib_SE1 0 )   
+(setq butee_min_traitement_immediat_inhib_SE1  '( 0 us )) 
+(setq evt_soft_traitement_immediat_inhib_SE1 0 )   
+(setq it_soft_traitement_immediat_inhib_SE1 0 )   
+(setq actions_traitement_immediat_inhib_SE1  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_inhib_SE1 0 )   
+(setq sel_tempo/compte_traitement_differe_inhib_SE1 0 )   
+(setq duree_traitement_differe_inhib_SE1  '( 500 8us )) 
+(setq val_compte_traitement_differe_inhib_SE1 1 )   
+(setq evt_soft_traitement_differe_inhib_SE1 0 )   
+(setq it_soft_traitement_differe_inhib_SE1 0 )   
+(setq actions_traitement_differe_inhib_SE1  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_inhib_SE2 0 )   
+(setq butee_min_traitement_immediat_inhib_SE2  '( 0 us )) 
+(setq evt_soft_traitement_immediat_inhib_SE2 0 )   
+(setq it_soft_traitement_immediat_inhib_SE2 0 )   
+(setq actions_traitement_immediat_inhib_SE2  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_inhib_SE2 0 )   
+(setq sel_tempo/compte_traitement_differe_inhib_SE2 0 )   
+(setq duree_traitement_differe_inhib_SE2  '( 500 8us )) 
+(setq val_compte_traitement_differe_inhib_SE2 1 )   
+(setq evt_soft_traitement_differe_inhib_SE2 0 )   
+(setq it_soft_traitement_differe_inhib_SE2 0 )   
+(setq actions_traitement_differe_inhib_SE2  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_reserve0_SE 0 )   
+(setq butee_min_traitement_immediat_reserve0_SE  '( 0 us )) 
+(setq evt_soft_traitement_immediat_reserve0_SE 0 )   
+(setq it_soft_traitement_immediat_reserve0_SE 0 )   
+(setq actions_traitement_immediat_reserve0_SE  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_reserve0_SE 1 )   
+(setq sel_tempo/compte_traitement_differe_reserve0_SE 0 )   
+(setq duree_traitement_differe_reserve0_SE  '( 0 8us )) 
+(setq val_compte_traitement_differe_reserve0_SE 1 )   
+(setq evt_soft_traitement_differe_reserve0_SE 1 )   
+(setq it_soft_traitement_differe_reserve0_SE 0 )   
+(setq actions_traitement_differe_reserve0_SE  '(    
+      
+      
+      
+  OUV_DJ_MEMO    
+      
+  ECRETEUR_MEMO    
+      
+      
+      
+      
+  INHIB_PH_R_MEMO    
+  INHIB_PH_S_MEMO    
+  INHIB_PH_T_MEMO    
+      
+   ))   
+(setq validation_traitement_immediat_reserve1_SE 0 )   
+(setq butee_min_traitement_immediat_reserve1_SE  '( 0 us )) 
+(setq evt_soft_traitement_immediat_reserve1_SE 0 )   
+(setq it_soft_traitement_immediat_reserve1_SE 0 )   
+(setq actions_traitement_immediat_reserve1_SE  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_reserve1_SE 0 )   
+(setq sel_tempo/compte_traitement_differe_reserve1_SE 0 )   
+(setq duree_traitement_differe_reserve1_SE  '( 0 8us )) 
+(setq val_compte_traitement_differe_reserve1_SE 1 )   
+(setq evt_soft_traitement_differe_reserve1_SE 0 )   
+(setq it_soft_traitement_differe_reserve1_SE 0 )   
+(setq actions_traitement_differe_reserve1_SE  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_reserve2_SE 0 )   
+(setq butee_min_traitement_immediat_reserve2_SE  '( 0 us )) 
+(setq evt_soft_traitement_immediat_reserve2_SE 0 )   
+(setq it_soft_traitement_immediat_reserve2_SE 0 )   
+(setq actions_traitement_immediat_reserve2_SE  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_reserve2_SE 0 )   
+(setq sel_tempo/compte_traitement_differe_reserve2_SE 0 )   
+(setq duree_traitement_differe_reserve2_SE  '( 0 8us )) 
+(setq val_compte_traitement_differe_reserve2_SE 1 )   
+(setq evt_soft_traitement_differe_reserve2_SE 0 )   
+(setq it_soft_traitement_differe_reserve2_SE 0 )   
+(setq actions_traitement_differe_reserve2_SE  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_reserve3_SE 0 )   
+(setq butee_min_traitement_immediat_reserve3_SE  '( 0 us )) 
+(setq evt_soft_traitement_immediat_reserve3_SE 0 )   
+(setq it_soft_traitement_immediat_reserve3_SE 0 )   
+(setq actions_traitement_immediat_reserve3_SE  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_reserve3_SE 0 )   
+(setq sel_tempo/compte_traitement_differe_reserve3_SE 0 )   
+(setq duree_traitement_differe_reserve3_SE  '( 1 8us )) 
+(setq val_compte_traitement_differe_reserve3_SE 1 )   
+(setq evt_soft_traitement_differe_reserve3_SE 0 )   
+(setq it_soft_traitement_differe_reserve3_SE 0 )   
+(setq actions_traitement_differe_reserve3_SE  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_erreur_instruction 1 )   
+(setq butee_min_traitement_immediat_erreur_instruction  '( 0 us )) 
+(setq evt_soft_traitement_immediat_erreur_instruction 1 )   
+(setq it_soft_traitement_immediat_erreur_instruction 0 )   
+(setq actions_traitement_immediat_erreur_instruction  '(    
+      
+      
+      
+  OUV_DJ_MEMO    
+      
+  ECRETEUR_MEMO    
+      
+      
+      
+      
+  INHIB_PH_R_MEMO    
+  INHIB_PH_S_MEMO    
+  INHIB_PH_T_MEMO    
+      
+   ))   
+(setq validation_traitement_differe_erreur_instruction 0 )   
+(setq sel_tempo/compte_traitement_differe_erreur_instruction 0 )   
+(setq duree_traitement_differe_erreur_instruction  '( 1 8us )) 
+(setq val_compte_traitement_differe_erreur_instruction 1 )   
+(setq evt_soft_traitement_differe_erreur_instruction 0 )   
+(setq it_soft_traitement_differe_erreur_instruction 0 )   
+(setq actions_traitement_differe_erreur_instruction  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_defaut_alim_commande 1 )   
+(setq butee_min_traitement_immediat_defaut_alim_commande  '( 0 us )) 
+(setq evt_soft_traitement_immediat_defaut_alim_commande 1 )   
+(setq it_soft_traitement_immediat_defaut_alim_commande 0 )   
+(setq actions_traitement_immediat_defaut_alim_commande  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_defaut_alim_commande 0 )   
+(setq sel_tempo/compte_traitement_differe_defaut_alim_commande 0 )   
+(setq duree_traitement_differe_defaut_alim_commande  '( 1 8us )) 
+(setq val_compte_traitement_differe_defaut_alim_commande 1 )   
+(setq evt_soft_traitement_differe_defaut_alim_commande 0 )   
+(setq it_soft_traitement_differe_defaut_alim_commande 0 )   
+(setq actions_traitement_differe_defaut_alim_commande  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_defaut_soft0 0 )   
+(setq butee_min_traitement_immediat_defaut_soft0  '( 391 512us )) 
+(setq evt_soft_traitement_immediat_defaut_soft0 0 )   
+(setq it_soft_traitement_immediat_defaut_soft0 0 )   
+(setq actions_traitement_immediat_defaut_soft0  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_defaut_soft0 0 )   
+(setq sel_tempo/compte_traitement_differe_defaut_soft0 0 )   
+(setq duree_traitement_differe_defaut_soft0  '( 1 8us )) 
+(setq val_compte_traitement_differe_defaut_soft0 1 )   
+(setq evt_soft_traitement_differe_defaut_soft0 0 )   
+(setq it_soft_traitement_differe_defaut_soft0 0 )   
+(setq actions_traitement_differe_defaut_soft0  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_immediat_defaut_soft1 1 )   
+(setq butee_min_traitement_immediat_defaut_soft1  '( 0 us )) 
+(setq evt_soft_traitement_immediat_defaut_soft1 0 )   
+(setq it_soft_traitement_immediat_defaut_soft1 0 )   
+(setq actions_traitement_immediat_defaut_soft1  '(    
+      
+      
+      
+      
+      
+      
+      
+  INHIB_PH_R    
+  INHIB_PH_S    
+  INHIB_PH_T    
+      
+      
+      
+      
+   ))   
+(setq validation_traitement_differe_defaut_soft1 0 )   
+(setq sel_tempo/compte_traitement_differe_defaut_soft1 0 )   
+(setq duree_traitement_differe_defaut_soft1  '( 1 8us )) 
+(setq val_compte_traitement_differe_defaut_soft1 1 )   
+(setq evt_soft_traitement_differe_defaut_soft1 0 )   
+(setq it_soft_traitement_differe_defaut_soft1 0 )   
+(setq actions_traitement_differe_defaut_soft1  '(    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   ))   
+(setq actions_soft_config '(     
+ (INHIB_AMONT OU )   
+ (INHIB_AVAL OU )   
+ (INHIB_ADJACENT OU )   
+ (OUV_DJ_MEMO OU )   
+ (ECRETEUR NIL )   
+ (ECRETEUR_MEMO OU )   
+ (HARD_CROWBAR OU )   
+ (INHIB_PH_R OU )   
+ (INHIB_PH_S OU )   
+ (INHIB_PH_T OU )   
+ (INHIB_PH_R_MEMO OU )   
+ (INHIB_PH_S_MEMO OU )   
+ (INHIB_PH_T_MEMO OU )   
+ (CC_ONDULEUR ET )   
+ (SENS_CC_ONDULEUR OU )   
+))      
+(setq latch_action_inhib_ph_R_memo 1 )   
+(setq latch_action_inhib_ph_S_memo 1 )   
+(setq latch_action_inhib_ph_T_memo 1 )   
+(setq latch_action_inhib_ph_R 0 )   
+(setq latch_action_inhib_ph_S  0 )   
+(setq latch_action_inhib_ph_T  0 )   
+(setq latch_action_cc_onduleur 1 )   
+(setq latch_action_sens_cc_onduleur 1 )   
+(setq latch_action_hard_crowbar 1 )   
+(setq latch_action_ecreteur 0 )   
+(setq latch_action_ecreteur_memo 1 )   
+(setq latch_action_ouv_dj_memo 1 )   
+(setq latch_action_inhib_amont 1 )   
+(setq latch_action_inhib_aval 1 )   
+(setq latch_action_inhib_adjacent 1 )   
+(setq latch_action_reserve 0 )   

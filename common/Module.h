@@ -18,10 +18,13 @@ class Module{
 public:
    Module(std::string inputFileName,std::string outputFileName,void* p_cfg, int size);
    virtual void addVar(ParamMere *param);
+   virtual int removeVar(ParamMere &param);
+   virtual void readInputFile(void) const;
    virtual void generate(void) const;
    virtual void printInfo(void) const;
    virtual ~Module();
 private:
+   int totalSize(void) const;
    std::string m_inputFileName,m_outputFileName;
    void* m_p_cfg;
    int m_size;//<!size of the associated structure

@@ -271,7 +271,7 @@ typedef struct {
 } PUL_CFG;
 
 //////////////////////////////////////////////////////////////////////////////
-
+#pragma pack(push, 4)
 typedef
 struct {
    T_BRASSAGE_CFG Brass_cfg;
@@ -304,10 +304,17 @@ struct {
 	MOD_MAX_CFG mod_max;              // gabarit modmax(fs)
 	PUL_CFG pul_cfg;                  // parametres @@Surveillance tension d' entrée hacheur
 	                                  //  et @@Surveillance captation
+//	char toto;
+   HYST_L_H UF_BROSSE_COMMUT_SEUIL_FPGA; ///< hysteris sur la tension ligne
 
-    HYST_L_H UF_BROSSE_COMMUT_SEUIL_FPGA; ///< hysteris sur la tension ligne
 
 } OND_S_CFG;
+#pragma pack(pop)
+
 extern OND_S_CFG ond_s_cfg;
 
+//!todo add protection anti-padding to be sure their is no space in memory between data (each are on 32 bits)
+//#define EXPECTED_OND_S_CFG_SIZE (sizeof(int) * nb_vars_out_or_in_out)
+//static_assert(sizeof(OND_S_CFG) == EXPECTED_FOO_SIZE, "Using padding!");
+//static_assert (false,"coucou");
 #endif

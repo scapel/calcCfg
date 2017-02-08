@@ -10,15 +10,16 @@
 
 
 typedef enum {
-   IN = 0,
-   OUT = 1,
-   IN_OUT = 2
+   DIR_IN = 0,
+   DIR_OUT = 1,
+   DIR_IN_OUT = 2
 }t_direction;
 
 typedef enum {
-   INT = 0,
-   FLOAT = 1,
-   BOOL = 2
+   UNKNOWN = 0,
+   TYPE_INT = 1,
+   TYPE_FLOAT = 2,
+   TYPE_BOOL = 3
 }t_type;
 
 

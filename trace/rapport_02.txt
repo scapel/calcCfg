@@ -1,0 +1,9 @@
+Mon Dec 05 17:42:13 2016
+
+crc32 global: 2238256840
+
+Vérification de la version utilisée de calc_cfg: OK (vphos_1.0.0_beta1)
+Vérification des paramètres primaires: tous les paramètres sont OK
+Vérification des tables d'angles: toutes les tables sont OK
+Calcul et vérification des paramètres secondaires: tous les paramètres sont OK
+Génération des fichiers binaires: tous les fichiers sont OK
